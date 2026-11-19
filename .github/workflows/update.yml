@@ -15,7 +15,7 @@ jobs:
       - name: בדיקה ועדכון לגרסה האחרונה
         run: |
           git clone --depth 1 https://github.com/y0548434290-dot/kabalot-app.git /tmp/up
-          rsync -a --delete --exclude .git --exclude .github /tmp/up/ ./
+          rsync -a --checksum --delete --exclude .git --exclude .github /tmp/up/ ./
           if [ -n "$(git status --porcelain)" ]; then
             git config user.name "BarduGo - עדכונים"
             git config user.email "updates@automationco.org"
