@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>קבלות מהבנק</title>
+<link rel="icon" href="/kabalot-app/icon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700;800&family=Secular+One&display=swap">
+<link rel="stylesheet" href="/kabalot-app/app.css">
+</head>
+<body>
+<header class="top">
+  <div class="top-inner">
+    <a href="/" class="brand" aria-label="קבלות מהבנק - דף הבית">
+      <span class="brand-mark"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1z"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"/><path d="M12 17.5v-11"/></svg></span>
+      קבלות מהבנק
+    </a>
+    <span class="spacer"></span>
+    <span id="live"></span>
+    <span id="top-actions"></span>
+  </div>
+</header>
+<main id="app" class="wrap" aria-live="polite">
+  <p class="muted">טוען...</p>
+</main>
+<!-- הנתיב /kabalot-app/ עובד בשתי הכתובות (rewrite ב-vercel.json) -->
+<script src="/kabalot-app/app.js"></script>
+</body>
+</html>

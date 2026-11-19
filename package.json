@@ -1,0 +1,13 @@
+{
+  "name": "kabalot-app",
+  "private": true,
+  "description": "קבלות מהבנק - גרסה להתקנה אצל העסק. רישיון שימוש מ-BarduGo בלבד.",
+  "license": "SEE LICENSE IN LICENSE",
+  "type": "commonjs",
+  "engines": {
+    "node": "22.x"
+  },
+  "dependencies": {
+    "@vercel/functions": "^3.11.1"
+  }
+}
