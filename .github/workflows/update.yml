@@ -1,0 +1,28 @@
+name: עדכון אוטומטי - קבלות מהבנק
+on:
+  schedule:
+    - cron: '23 1 * * *'
+  workflow_dispatch: {}
+permissions:
+  contents: write
+concurrency: update
+jobs:
+  update:
+    if: github.repository != 'y0548434290-dot/kabalot-app'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: בדיקה ועדכון לגרסה האחרונה
+        run: |
+          git clone --depth 1 https://github.com/y0548434290-dot/kabalot-app.git /tmp/up
+          rsync -a --delete --exclude .git --exclude .github /tmp/up/ ./
+          if [ -n "$(git status --porcelain)" ]; then
+            git config user.name "BarduGo - עדכונים"
+            git config user.email "updates@automationco.org"
+            git add -A
+            git commit -m "עדכון לגרסה $(cat VERSION)"
+            git push
+            echo "עודכן לגרסה $(cat VERSION)"
+          else
+            echo "כבר בגרסה האחרונה ($(cat VERSION))"
+          fi
